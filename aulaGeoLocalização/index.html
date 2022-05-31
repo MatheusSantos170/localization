@@ -7,6 +7,7 @@
     <script>
         const onLocationSucess = function(geoloc){
             console.log("cost getGeoposition = function(){...");
+            console.log(geoloc);
         }
         const onErrorLocation = function(eRR){
             console.log("cost getGeoposition = function(){...");
@@ -19,7 +20,7 @@
             if(navigator.geolocation) {
                 console.log("cost getGeoposition = function(){...");
 
-                navigator.geolocation.getCurrentLocation(
+                navigator.geolocation.getCurrentPosition(
                     onLocationSucess, onErrorLocation);
 
             }else{
@@ -28,7 +29,7 @@
         }
         funcaoquerodaapoocarregmentodapagina = function(){
             console.log("essa fucao roda apos o carregamento da pagina...");
-            document.getElementbyId("btnObtemLatLongitude");
+            document.getElementById("btnObtemLatLongitude");
             document.addEventListener('click',getGeoposition);
         }
         
